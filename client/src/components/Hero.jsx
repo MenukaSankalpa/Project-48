@@ -7,19 +7,15 @@ const Hero = () => {
 
     const{setSearchFilter, setIdSearched} = useContext(AppContext)
     
-    const titleRef = useRef(null)
-    const locationRef = useRef(null)
+    const titleRef = useRef(null);
+    const locationRef = useRef(null);
 
     const onSearch = () => {
         setSearchFilter({
             title: titleRef.current.value,
             location: locationRef.current.value
         })
-        setIdSearched(true)
-        console.log({
-            title: titleRef.current.value,
-            location: locationRef.current.value
-        });
+        setIdSearched(true)  
     }
 
   return (
@@ -30,11 +26,11 @@ const Hero = () => {
             <div className='flex items-center justify-between bg-white rounded text-gray-600 max-w-xl pl-4 mx-4 sm:mx-auto'> 
                 <div className='flex item-center '>
                     <img /*className='flex item-center '*/   src={assets.search_icon} alt="" />
-                    <input type="text"  placeholder='Search for jobs' className='max-sm:text-xs p-2 rounded outline-none w-full' title={titleRef}/>
+                    <input type="text"  placeholder='Search for jobs' className='max-sm:text-xs p-2 rounded outline-none w-full' ref={titleRef}/>
                 </div>
                 <div className='flex item-center ' >
                     <img /*className='flex item-center '*/ src={assets.location_icon} alt="" />
-                    <input type="text"  placeholder='location_icon' className='max-sm:text-xs p-2 rounded outline-none w-full' title={locationRef}/>
+                    <input type="text"  placeholder='location_icon' className='max-sm:text-xs p-2 rounded outline-none w-full' ref={locationRef}/>
                 </div>
                 <button onClick={onSearch} className='bg-blue-600 px-6 py-2 rounded text-white m-1'>Search</button> 
             </div>
