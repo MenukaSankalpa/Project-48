@@ -15,7 +15,11 @@ const Hero = () => {
             title: titleRef.current.value,
             location: locationRef.current.value
         })
-        setIdSearched(true)  
+        setIdSearched(true)
+        console.log({
+            title: titleRef.current.value,
+            location: locationRef.current.value
+        })  
     }
 
   return (
