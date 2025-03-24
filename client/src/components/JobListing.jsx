@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/appContext'
+import { assets } from '../assets/assets'
+
 
 const JobListing = () => {
 
@@ -18,11 +20,13 @@ const JobListing = () => {
                             {searchFilter.title && (
                                 <span>
                                     {searchFilter.title}
+                                    <img className='cursor-pointer' src={assets.cross_icon} alt="" />
                                 </span>
                             )}
                             {searchFilter.location && (
                                 <span>
-                                    {searchFilter.location}
+                                    {searchFilter.location}  
+                                    <img className='cursor-pointer' src={assets.cross_icon} alt="" />                                
                                 </span>
                             )}
                         </div>

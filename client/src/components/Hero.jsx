@@ -30,7 +30,7 @@ const Hero = () => {
                 </div>
                 <div className='flex item-center ' >
                     <img /*className='flex item-center '*/ src={assets.location_icon} alt="" />
-                    <input type="text"  placeholder='location_icon' className='max-sm:text-xs p-2 rounded outline-none w-full' ref={locationRef}/>
+                    <input type="text"  placeholder='location' className='max-sm:text-xs p-2 rounded outline-none w-full' ref={locationRef}/>
                 </div>
                 <button onClick={onSearch} className='bg-blue-600 px-6 py-2 rounded text-white m-1'>Search</button> 
             </div>
