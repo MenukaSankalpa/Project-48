@@ -9,11 +9,11 @@ export const AppContextProvider = (props) => {
         location:''
     })
 
-    const [idSearched,setIdSearched] = useState(false)
+    const [isSearched,setIsSearched] = useState(false)
 
     const value = {
         setSearchFilter,searchFilter,
-        idSearched,setIdSearched,
+        isSearched,setIsSearched,
     }
     return (<AppContext.Provider value={value}>
         {props.children}

@@ -5,17 +5,17 @@ import { AppContext } from '../context/appContext'
 
 const Hero = () => {
 
-    const{setSearchFilter, setIdSearched} = useContext(AppContext)
+    const{setSearchFilter, setIsSearched} = useContext(AppContext)
     
     const titleRef = useRef(null);
     const locationRef = useRef(null);
 
     const onSearch = () => {
         setSearchFilter({
-            title: titleRef.current.value,
+            title: titleRef.current.value,  
             location: locationRef.current.value
         })
-        setIdSearched(true) 
+        setIsSearched(true)       
     }
 
   return (
