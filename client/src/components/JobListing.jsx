@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AppContext } from '../context/appContext'
 import { assets, JobCategories, JobLocations, } from '../assets/assets'
 import JobCard from './JobCard'
@@ -6,6 +6,9 @@ import JobCard from './JobCard'
 const JobListing = () => {
 
     const{isSearched, searchFilter, setSearchFilter, jobs} = useContext(AppContext)
+
+    const[showFilter,setShowFilter] = useState(false)
+    const[currentPage, setCurrentpage] = useState(1)
 
   return (
     <div className='container 2x1:px-20 mx-auto flex flex-col lg:flex-row max-lg:space-y-8 py-8'>
@@ -34,8 +37,13 @@ const JobListing = () => {
                     </>
                 )
             }
+
+            <button onClick={e => setShowFilter(prev => !prev)} className='px-6 py-1.5 rounded border border-gray-400 lg:hidden'>
+                {showFilter? "Close" : "Filters"}
+            </button>
+
             {/* Category Filter*/}
-            <div className='max-lg:hidden'>
+            <div className={showFilter ? "" : "max-lg:hidden"}>
                 <h4 className='font-medium test-lg py-4'>Search by category</h4>
                 <ul className='space-y-4 text-gray-600'>
                     {
@@ -49,8 +57,8 @@ const JobListing = () => {
                 </ul>
             </div>
 
-            {/* Category location*/}
-            <div className='max-lg:hidden'>
+            {/* location filter */}
+            <div className={showFilter ? "" : "max-lg:hidden"}>
                 <h4 className='font-medium test-lg py-4 pt-14'>Search by location</h4>
                 <ul className='space-y-4 text-gray-600'>
                     {
@@ -74,6 +82,20 @@ const JobListing = () => {
                     <JobCard key={index} job={job} />
                 ))}
             </div>
+
+            {/* pagination */}
+            {jobs.length > 0 && (
+                <div>
+                    <a href="">
+                        <img src={assets.left_arrow_icon} alt="" />
+                    </a>
+                    {Array.from({length:Math.ceil(jobs.length/6)}).map((_,index) => (
+                        <a href="#job-list">
+                            <button>{index + 1}</button>
+                        </a>
+                    ))}
+                </div>
+            )}
         </section>
     </div>
   )
