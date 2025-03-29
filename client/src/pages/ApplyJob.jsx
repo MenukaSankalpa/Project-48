@@ -61,15 +61,23 @@ const ApplyJob = () => {
                 </div>
               </div>
               <div className='flex flex-col justify-center text-end text-sm max-md:mx-auto max-md:text-center'>
-                <button>Apply now</button>
-                <p>Posted {moment(JobData.date).fromNow()}</p>
+                <button className='bg-blue-600 p-2.5 px-10 text-white rounded'>Apply now</button>
+                <p className='mt-1 text-gray-600'>Posted {moment(JobData.date).fromNow()}</p>
+              </div>
+            </div>
+
+            <div className='flex flex-col lg:flex-row justify-between items-start'>
+              <div className='w-full lg:w-2/3'>
+                <h2 className='font-bold text-2xl mb-4'>Job Description</h2>
+                <div className='rich-text' dangerouslySetInnerHTML={{__html:JobData.description}}></div>
+                <button className='bg-blue-600 p-2.5 px-10 text-white rounded mt-10'>Apply now</button>
               </div>
             </div>
           </div>
         </div>
     </>
   ) : (
-    <Loading/> 2.44
+    <Loading/> 
   )
 }
 
