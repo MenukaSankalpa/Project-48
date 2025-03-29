@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import kconvert from 'k-convert';
 import moment from 'moment';
 import JobCard from '../components/JobCard'
+import Footer from '../components/Footer'
  
 const ApplyJob = () => {
 
@@ -75,7 +76,7 @@ const ApplyJob = () => {
               </div>
 
               {/* right section more jobs */}
-              <div>
+              <div className='w-full lg:w-1/3 mt-8 lg:mt-0 lg:ml-8 space-y-5'>
                 <h2>More Jobs from {JobData.companyId.name}</h2>
                 {jobs.filter( job => job._id !== JobData._id && job.companyId._id === JobData.companyId._id)
                 .filter( job => true).slice(0,4)
@@ -84,6 +85,7 @@ const ApplyJob = () => {
             </div>
           </div>
         </div>
+        <Footer/>
     </>
   ) : (
     <Loading/> 
