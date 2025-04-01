@@ -11,7 +11,7 @@ const RecruiterLogin = () => {
 
     const[image,setImage] = useState('false')
 
-    const [isTextDataSubmited,setIsTextDataSubmited] = useState('')
+    const [isTextDataSubmited,setIsTextDataSubmited] = useState('false')
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
@@ -28,7 +28,13 @@ const RecruiterLogin = () => {
             <p className='text-sm'>Welcome Back! Please sign in to continue</p>
             { state === "Sign Up" && isTextDataSubmited 
             ? <>
-                <div></div>            
+                <div className='flex items-center gap-4 my-10'>
+                    <label htmlFor="image">
+                        <img className='w-16 rounded-full' src={assets.upload_area} alt="" />
+                        <input type="file" id='image' hidden />
+                        <p>Upload Company <br /> logo</p>
+                    </label>
+                </div>           
             </>
             : <>
             {state !== 'Login' && (
