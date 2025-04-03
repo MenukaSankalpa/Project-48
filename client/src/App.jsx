@@ -21,11 +21,11 @@ const App = () => {
         <Route path='/' element={<Home />}/>
         <Route path='/apply-job/:id' element={<ApplyJob />}/>
         <Route path='/applications' element={<Applications />}/>
-        <Route path='/dashboard' element={<Dashboard />}/>
+        <Route path='/dashboard' element={<Dashboard />}>
             <Route path='add-job' element={<AddJob />}/>
-            <Route path='mange-jobs' element={<ManageJobs />}/>
+            <Route path='manage-jobs' element={<ManageJobs />}/>
             <Route path='view-applications' element={<ViewApplications />}/>
-        <Route/>
+        </Route>
       </Routes>
     </div>
   )
