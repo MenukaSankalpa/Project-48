@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
 
 
@@ -28,6 +28,27 @@ const Dashboard = () => {
           </div>
         </div>
 
+        <div className='flex items-start'>
+          {/* left side of page add job, mange jobs, view applications*/ }
+          <div>
+            <ul>
+              <NavLink to={'/Dashboard/add-job'}>
+                  <img src={assets.add_icon} alt="" />
+                  <p>Add Job</p>
+              </NavLink>
+
+              <NavLink to={'/Dashboard/mange-jobs'}>
+                  <img src={assets.home_icon} alt="" />
+                  <p>Manage Job</p>
+              </NavLink>
+
+              <NavLink to={'/Dashboard/view-applications'}>
+                  <img src={assets.person_tick_icon} alt="" />
+                  <p>View Applications</p>
+              </NavLink>
+            </ul>
+          </div>
+        </div>
     </div>
   )
 }
