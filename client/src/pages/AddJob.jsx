@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Quill from 'quill'
+import { JobCategories, JobLocations } from '../assets/assets';
 
 const AddJob = () => {
 
@@ -34,10 +35,43 @@ const AddJob = () => {
           <div ref={editorRef}>
 
           </div>
-          <div>
+        </div>
 
+        <div>
+          <div>
+            <p>Job Category</p>
+            <select onChange={e=> setCategory(e.target.value)}>
+              {JobCategories.map((category, index)=>(
+                <option key={index} value={category}>{category}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <p>Job Locations</p>
+            <select onChange={e=> setLocation(e.target.value)}>
+              {JobLocations.map((location, index)=>(
+                <option key={index} value={location}>{location}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <p>Job Level</p>
+            <select onChange={e=> setLevel(e.target.value)}>
+              <option value="Beginner Level">Beginner Level</option>
+              <option value="Intermediate Level">Intermediate Level</option>
+              <option value="Senior Level">Senior Level</option>
+            </select>
           </div>
         </div>
+
+        <div>
+          <p>Job Salary</p>
+          <input onChange={ e => setSalary(e.target.value)} type="Number" placeholder='2500'/>
+        </div>
+
+        <button>ADD</button>
     </form>
   )
 }
