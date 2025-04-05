@@ -30,23 +30,26 @@ const Dashboard = () => {
 
         <div className='flex items-start'>
           {/* left side of page add job, mange jobs, view applications*/ }
-          <div>
-            <ul>
-              <NavLink to={'/Dashboard/add-job'}>
-                  <img src={assets.add_icon} alt="" />
-                  <p>Add Job</p>
+          <div className='inline-block min-h-screen border-r-2'>
+            <ul className='flex flex-col items-start pt-5 text-gray-800'>
+              <NavLink className={({isActive})=> ` flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 ${isActive && 'bg-blue-100 border-r-4 border-blue-500'}`} to={'/Dashboard/add-job'}>
+                  <img className='min-w-4' src={assets.add_icon} alt="" />
+                  <p className='max-sm:hidden'>Add Job</p>
               </NavLink>
 
-              <NavLink to={'/Dashboard/mange-jobs'}>
-                  <img src={assets.home_icon} alt="" />
-                  <p>Manage Job</p>
+              <NavLink className={({isActive})=> ` flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 ${isActive && 'bg-blue-100 border-r-4 border-blue-500'}`} to={'/Dashboard/manage-jobs'}>
+                  <img className='min-w-4' src={assets.home_icon} alt="" />
+                  <p className='max-sm:hidden'>Manage Job</p>
               </NavLink>
 
-              <NavLink to={'/Dashboard/view-applications'}>
-                  <img src={assets.person_tick_icon} alt="" />
-                  <p>View Applications</p>
+              <NavLink className={({isActive})=> ` flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 ${isActive && 'bg-blue-100 border-r-4 border-blue-500'}`} to={'/Dashboard/view-applications'}>
+                  <img className='min-w-4' src={assets.person_tick_icon} alt="" />
+                  <p className='max-sm:hidden'>View Applications</p>
               </NavLink>
             </ul>
+          </div>
+          <div>
+            <Outlet />
           </div>
         </div>
     </div>
