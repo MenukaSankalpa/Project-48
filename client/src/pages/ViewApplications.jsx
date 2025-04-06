@@ -3,10 +3,11 @@ import { assets, viewApplicationsPageData } from '../assets/assets'
 
 const ViewApplications = () => {
   return (
-    <div>
+    <div className='container mx-auto p-4'>
       <div>
-        <thead>
-          <tr>
+        <table className='w-full max-w-4xl bg-white border border-gray-200 max-sm:text-sm' >
+        <thead >
+          <tr className='border-b'>
             <th>#</th>
             <th>User Name</th>
             <th>Job Title</th>
@@ -32,12 +33,17 @@ const ViewApplications = () => {
               </td>
               <td>
                 <div>
-                  
+                  <button>...</button>
+                  <div>
+                    <button>Accept</button>
+                    <button>Reject</button>
+                  </div>
                 </div>
               </td>
             </tr>
           ))}
         </tbody>
+        </table>
       </div>
     </div>
   ) 
