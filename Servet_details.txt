@@ -1,1 +1,5 @@
 in server folder = npm init -y  
+server package = npm i express (this to create our server)
+and other packages to backend = npm i jsonwebtoken ( this package use to athunthication for requierter )
+other packages to backend = npm i bcrypt (this one for encrypt users passwords)
+after = npm i mongoose (to connect with our mongodb datbase) nodemon (to start our server project) svix(manage clerk athuntications )
