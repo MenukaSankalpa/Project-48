@@ -1,0 +1,1 @@
+in server folder = npm init -y  
