@@ -1,3 +1,5 @@
+<|> install mongodb  npm install mongodb
+
 <|> in server folder = npm init -y 
 
 <|> server package = npm i express (this to create our server)
