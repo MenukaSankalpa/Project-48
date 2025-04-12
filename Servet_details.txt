@@ -14,3 +14,6 @@
 <|> after = npm i cors(manage multiple adunosisam) multer(mange to form data) dotenv(manage the envirmental veribles) cloudinary(to store users resume and company logo on the cloudaniry flatform)
 [npm i cors multer dotenv cloudinary]
 
+
+
+using sentry foe error handling and we are choose mongoose to connect our database  
