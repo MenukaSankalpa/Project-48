@@ -9,7 +9,11 @@ const userSchema = new mongoose.Schema({
     image: { type: String, required: true} 
 })
 
+<<<<<<< HEAD
 const User = mongoose.model('User', userSchema);
+=======
+const User = mongoose.model("User", userSchema)
+>>>>>>> 1a9fec65b175663161917c071abad90c50251046
 
 export default User; 
 
