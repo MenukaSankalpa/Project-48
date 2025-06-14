@@ -5,7 +5,9 @@ import 'dotenv/config'
 import  connectDB  from './config/db.js'
 import * as Sentry from "@sentry/node";
 import { clerkWebhooks } from './controllers/webhooks.js'
+import User from './models/User.js'
 
+ 
 //Initialize express
 const app = express()
 
@@ -15,6 +17,22 @@ await connectDB()
 //Middlewares
 app.use(cors())
 app.use(express.json())
+
+// Test DB Route
+app.get("/run-db", async (req, res) => {
+  try {
+    await User.create({
+      _id: "manual002",
+      name: "Manual User",
+      email: "manual@example.com",
+      image: "https://example.com/test.png",
+      resume: ""
+    });
+    res.send("Manual test user added.");
+  } catch (error) {
+    res.status(500).send("Error adding user: " + error.message);
+  }
+});
 
 //Routes
 app.get('/', (req,res)=> res.send("API Working"))
