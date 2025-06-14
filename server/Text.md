@@ -6,4 +6,6 @@
 # npm run server 
 #postman (http://localhost:5000)   before run off the defender 
 
-#sentry site to manage project error handler
+# sentry site to manage project error handler
+
+# must check 5.40-5.50 deployee section  ☠️

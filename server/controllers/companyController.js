@@ -1,15 +1,32 @@
-//register a new company 
 
+//register a new company 
 export const registerCompany = async (req,res) => {
 
 }
 
 //company login 
-export const loginCompany = async () => {
+export const loginCompany = async (req,res) => {
 
 }
 
 //get company data
-export const getCompanyData = async () => {
+export const getCompanyData = async (req,res) => {
 
-}             5.48.13
+}         
+
+// post a new job
+export const postJob = async (req,res) => {
+
+}
+
+// get company job applicants
+export const getCompanyJobApplicants = async (req,res) => {
+
+}
+
+// get company posted Jobs
+export const getCompanyPostedJobs = async (req,res) => {
+
+}
+
+// change                         5.50
