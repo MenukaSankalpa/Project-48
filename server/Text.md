@@ -4,3 +4,6 @@
 3. npm i jsonwebtoken (athutencation for recuirter)
 
 # npm run server 
+#postman (http://localhost:5000)   before run off the defender 
+
+#sentry site to manage project error handler
