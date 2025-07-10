@@ -29,4 +29,12 @@ export const getCompanyPostedJobs = async (req,res) => {
 
 }
 
-// change                         5.50
+// change job Appliaction status       
+export const ChangeJobApplicationsStatus = async (req, res) => {
+
+}
+
+// change job visibility
+export const changeVisibility = async (req, res) => {
+
+} 
