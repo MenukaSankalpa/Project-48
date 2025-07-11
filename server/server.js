@@ -6,6 +6,7 @@ import  connectDB  from './config/db.js'
 import * as Sentry from "@sentry/node";
 import { clerkWebhooks } from './controllers/webhooks.js'
 import User from './models/User.js'
+import companyRoutes from './routes/companyRoutes.js'
 
  
 //Initialize express
@@ -40,6 +41,7 @@ app.get("/debug-sentry", function mainHandler(req, res) {
     throw new Error("My first Sentry error!");
   });
 app.post('/webhook', clerkWebhooks)
+app.use('/api/company', companyRoutes)
 
 //Port
 const PORT = process.env.PORT || 5000
