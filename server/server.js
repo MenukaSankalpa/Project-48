@@ -7,6 +7,7 @@ import * as Sentry from "@sentry/node";
 import { clerkWebhooks } from './controllers/webhooks.js'
 import User from './models/User.js'
 import companyRoutes from './routes/companyRoutes.js'
+import connectCloudinary from './config/cloudinary.js'
 
  
 //Initialize express
@@ -14,11 +15,12 @@ const app = express()
 
 //Connect to the database
 await connectDB()
+await connectCloudinary()
 
 //Middlewares
 app.use(cors())
 app.use(express.json())
-
+ 
 // Test DB Route
 app.get("/run-db", async (req, res) => {
   try {
